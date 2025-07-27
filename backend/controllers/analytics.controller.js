@@ -27,7 +27,8 @@ export const getAnalyticsData = async () => {
 };
 
 export const getDailySalesData = async (startDate, endDate) => {
-    const dailySalesData = await Order.aggregate([
+   try {
+     const dailySalesData = await Order.aggregate([
         {
             $match: {
                 createdAt: {
@@ -86,6 +87,9 @@ export const getDailySalesData = async (startDate, endDate) => {
             revenue: foundData?.revenue || 0, // ถ้าไม่พบข้อมูล ให้ค่าเป็น 0  
         }
     }]
+   } catch (error) {
+    throw error
+   }
 };
 
 function getDatesInRange(startDate, endDate){
