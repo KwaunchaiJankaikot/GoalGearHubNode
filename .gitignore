@@ -1,0 +1,13 @@
+# ไม่ให้เก็บโฟลเดอร์ Node modules
+node_modules/
+
+# ไม่เก็บไฟล์ ENV ที่เก็บ key/รหัสลับ
+.env
+
+# ไม่เก็บ log และไฟล์ระบบ
+*.log
+.DS_Store
+Thumbs.db
+
+# ไม่เก็บไฟล์ VS Code
+.vscode/
